@@ -52,7 +52,6 @@ class demo():
         """测试发送表情图片消息函数"""
         self.ruixin.send_image(pic_url='http://d.lanrentuku.com/down/png/1109/cute_boy/cute_boy_09.png')
         time.sleep(3)
-
     def test_send_link(self):
         """测试发送链接消息函数"""
         self.ruixin.send_link(title='万万没想到，机器姬竟然...', text='故事是这样子的...',
@@ -60,8 +59,6 @@ class demo():
                                        pic_url='http://d.lanrentuku.com/down/png/1109/cute_boy/cute_boy_12.png')
 
         time.sleep(3)
-
-
     def test_send_markdown(self):
         """测试发送Markdown格式消息函数"""
         # 1、提醒所有人
@@ -80,7 +77,6 @@ class demo():
                                            at_mobiles=self.at_mobiles)
 
         time.sleep(3)
-
     def test_send_actioncard(self):
         # 整体跳转ActionCard
         """测试发送整体跳转ActionCard消息功能（CardItem新API)"""
@@ -118,8 +114,6 @@ class demo():
         self.ruixin.send_action_card(actioncard3)
 
         time.sleep(3)
-
-
     def test_send_feedcard(self):
         """测试发送FeedCard类型消息功能（CardItem新API)"""
         # FeedCard类型
@@ -133,7 +127,6 @@ class demo():
         self.ruixin.send_feed_card(cards)
 
         time.sleep(3)
-
     def test_send_feedcard_old_api(self):
         """测试发送FeedCard类型消息功能(FeedLink旧API)"""
         feedlink1 = FeedLink(title="氧气美女", message_url=__authorurl__,
@@ -144,9 +137,7 @@ class demo():
                              pic_url="https://img-arch.pconline.com.cn/images/upload/upc/tx/itbbs/1401/21/c26/30762046_1390298267194.jpg")
         links = [feedlink1, feedlink2, feedlink3]
         self.ruixin.send_feed_card(links)
-
         time.sleep(3)
-
 def mini_sample():
     # *************************************这里填写自己钉钉群自定义机器人的token*****************************************
     webhook = webhookurl + access_token
