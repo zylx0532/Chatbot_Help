@@ -383,6 +383,6 @@ class CardItem(object):
             raise ValueError("CardItem是ActionCard的子控件时，title、url不能为空；是FeedCard的子控件时，title、url、pic_url不能为空！")
 
 
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
+#if __name__ == '__main__':
+#    import doctest
+#    doctest.testmod()
