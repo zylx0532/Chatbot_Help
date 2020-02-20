@@ -17,4 +17,4 @@ from __future__ import division, absolute_import, print_function
 
 from .version import __version__
 
-from .dingtalk.dingtalkbot import DingtalkChatbot
+from chatbot_help.dingtalk.dingtalkbot import DingtalkChatbot,is_not_null_and_blank_str,ActionCard,CardItem,FeedLink
