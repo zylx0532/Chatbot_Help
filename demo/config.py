@@ -16,7 +16,11 @@ class Config(object):
     def __init__(self, config_file='config.ini'):
         self._path = os.path.join(os.getcwd(), config_file)
         if not os.path.exists(self._path):
-            raise FileNotFoundError("No such file: config.ini")
+            print("找不到%s尝试读取默认配置文件",config_file)
+            config_file='configDemo.ini'
+            self._path = os.path.join(os.getcwd(), config_file)
+            if not os.path.exists(self._path):
+                raise FileNotFoundError("找不到默认配置文件。退出")
         self._config = configparser.ConfigParser()
         self._config.read(self._path, encoding='utf-8-sig')
         self._configRaw = configparser.RawConfigParser()
