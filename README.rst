@@ -36,10 +36,12 @@
     print(ch.__version__)                # 打印版本信息
     dtalk = DingtalkChatbot(webhook)     # 你设置群机器人的时候生成的webhook
 
-详情请参考：`Dingtalk_README <https://github.com/charlesXu86/Chatbot_Help/blob/master/Dingtalk_README.rst>`_
+详情请参考：`Dingtalk_README <https://github.com/zylx0532/Chatbot_Help/blob/master/Dingtalk_README.rst>`_
 
 四、Update News
 ======================
+
+    * 2020.02.21    完善本地配置文件部分
 
     * 2020.1.7  接入钉钉群，支持主动推送消息、outgoing交互
 
@@ -52,4 +54,4 @@
 五、Resources
 ======================
 
-.. _`Dingtalk_README`: https://github.com/charlesXu86/Chatbot_Help/blob/master/Dingtalk_README.rst
+.. _`Dingtalk_README`: https://github.com/zylx0532/Chatbot_Help/blob/master/Dingtalk_README.rst

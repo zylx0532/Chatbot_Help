@@ -157,13 +157,13 @@
                                  hide_avatar=1)
     xiaoben.send_action_card(actioncard3)
 
-.. |image0| image:: https://raw.githubusercontent.com/charlesXu86/Chatbot_Help/master/img/text_at_all.png
-.. |image1| image:: https://raw.githubusercontent.com/charlesXu86/Chatbot_Help/blob/master/img/text_at_one.png
-.. |image2| image:: https://raw.githubusercontent.com/charlesXu86/Chatbot_Help/blob/master/img/link.png
-.. |image3| image:: https://raw.githubusercontent.com/charlesXu86/Chatbot_Help/blob/master/img/markdown_at_all.png
-.. |image4| image:: https://raw.githubusercontent.com/charlesXu86/Chatbot_Help/blob/master/img/markdown_at_one.png
-.. |image5| image:: https://raw.githubusercontent.com/charlesXu86/Chatbot_Help/blob/master/img/feedcard.png
-.. |image6| image:: https://raw.githubusercontent.com/charlesXu86/Chatbot_Help/blob/master/img/global_actioncard.png
-.. |image7| image:: https://raw.githubusercontent.com/charlesXu86/Chatbot_Help/blob/master/img/select_actioncard.png
-.. |image8| image:: https://raw.githubusercontent.com/charlesXu86/Chatbot_Help/blob/master/img/multi_actioncard.png
-.. |image9| image:: https://raw.githubusercontent.com/charlesXu86/Chatbot_Help/blob/master/img/image_msg.png
+.. |image0| image:: https://raw.githubusercontent.com/zylx0532/Chatbot_Help/master/img/text_at_all.png
+.. |image1| image:: https://raw.githubusercontent.com/zylx0532/Chatbot_Help/blob/master/img/text_at_one.png
+.. |image2| image:: https://raw.githubusercontent.com/zylx0532/Chatbot_Help/blob/master/img/link.png
+.. |image3| image:: https://raw.githubusercontent.com/zylx0532/Chatbot_Help/blob/master/img/markdown_at_all.png
+.. |image4| image:: https://raw.githubusercontent.com/zylx0532/Chatbot_Help/blob/master/img/markdown_at_one.png
+.. |image5| image:: https://raw.githubusercontent.com/zylx0532/Chatbot_Help/blob/master/img/feedcard.png
+.. |image6| image:: https://raw.githubusercontent.com/zylx0532/Chatbot_Help/blob/master/img/global_actioncard.png
+.. |image7| image:: https://raw.githubusercontent.com/zylx0532/Chatbot_Help/blob/master/img/select_actioncard.png
+.. |image8| image:: https://raw.githubusercontent.com/zylx0532/Chatbot_Help/blob/master/img/multi_actioncard.png
+.. |image9| image:: https://raw.githubusercontent.com/zylx0532/Chatbot_Help/blob/master/img/image_msg.png
