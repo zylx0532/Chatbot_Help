@@ -17,6 +17,10 @@ import json
 import time
 import logging
 import requests
+import hmac
+import hashlib
+import base64
+import urllib.parse
 try:
     JSONDecodeError = json.decoder.JSONDecodeError
 except AttributeError:
@@ -48,7 +52,7 @@ class DingtalkChatbot(object):
     """
     钉钉群自定义机器人（每个机器人每分钟最多发送20条），支持文本（text）、连接（link）、markdown三种消息类型！
     """
-    def __init__(self, webhook):
+    def __init__(self, webhook,secret):
         """
         机器人初始化
         :param webhook: 钉钉群自定义机器人webhook地址
@@ -56,6 +60,7 @@ class DingtalkChatbot(object):
         super(DingtalkChatbot, self).__init__()
         self.headers = {'Content-Type': 'application/json; charset=utf-8'}
         self.webhook = webhook
+        self.secret = secret
         self.times = 0
         self.start_time = time.time()
 
@@ -216,7 +221,13 @@ class DingtalkChatbot(object):
 
         post_data = json.dumps(data)
         try:
-            response = requests.post(self.webhook, headers=self.headers, data=post_data)
+            if self.secret =='0':
+                response = requests.post(self.webhook, headers=self.headers, data=post_data)
+            else:
+                timestamp = int(round(time.time() * 1000))
+                sign = self.sign(timestamp,self.secret)
+                signt = '&timestamp=%s&sign=%s'%(timestamp,sign)
+                response = requests.post(self.webhook+signt, headers=self.headers, data=post_data)
         except requests.exceptions.HTTPError as exc:
             logging.error("消息发送失败， HTTP error: %d, reason: %s" % (exc.response.status_code, exc.response.reason))
             raise
@@ -240,9 +251,21 @@ class DingtalkChatbot(object):
                 if result['errcode']:
                     error_data = {"msgtype": "text", "text": {"content": "钉钉机器人消息发送失败，原因：%s" % result['errmsg']}, "at": {"isAtAll": True}}
                     logging.error("消息发送失败，自动通知：%s" % error_data)
-                    requests.post(self.webhook, headers=self.headers, data=json.dumps(error_data))
+                    if self.secret == 0:
+                        requests.post(self.webhook, headers=self.headers, data=json.dumps(error_data))
+                    else:
+                        timestamp = int(round(time.time() * 1000))
+                        sign = self.sign(timestamp, self.secret)
+                        signt = '&timestamp=%s&sign=%s' % (timestamp, sign)
+                        requests.post(self.webhook + signt, headers=self.headers, data=json.dumps(error_data))
                 return result
-
+    def sign(self,timestamp,secret):
+        secret_enc = secret.encode('utf-8')
+        string_to_sign = '{}\n{}'.format(timestamp, secret)
+        string_to_sign_enc = string_to_sign.encode('utf-8')
+        hmac_code = hmac.new(secret_enc, string_to_sign_enc, digestmod=hashlib.sha256).digest()
+        result = urllib.parse.quote_plus(base64.b64encode(hmac_code))
+        return result
 
 class ActionCard(object):
     """

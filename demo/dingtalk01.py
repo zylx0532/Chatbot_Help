@@ -18,7 +18,6 @@ from chatbot_help import DingtalkChatbot,is_not_null_and_blank_str, ActionCard, 
 
 __author__ = 'WaterIce'
 __authorurl__ = 'https://zhiqiang.name'
-
 logging.basicConfig(level=logging.ERROR)
 global access_token,secret,webhookurl
 class demo():
@@ -35,7 +34,7 @@ class demo():
         # 用户手机号列表
         self.at_mobiles = ['13990692500']
         # 初始化机器人
-        self.ruixin = DingtalkChatbot(webhookurl+access_token)
+        self.ruixin = DingtalkChatbot(webhookurl+access_token,secret)
     def test_is_not_null_and_blank_str(self):
         """测试字符串不为空函数"""
         is_not_null_and_blank_str('')
@@ -153,12 +152,11 @@ if __name__ == '__main__':
     dem1=demo()
     dem1.getconfig()
     dem1.setUpClass()
-    dem1.test_is_not_null_and_blank_str()
     dem1.test_send_text()
-    dem1.test_send_image()
-    dem1.test_send_link()
-    dem1.test_send_markdown()
-    dem1.test_send_actioncard()
-    dem1.test_send_feedcard()
-    dem1.test_send_feedcard_old_api()
+    #dem1.test_send_image()
+    #dem1.test_send_link()
+    #dem1.test_send_markdown()
+    #dem1.test_send_actioncard()
+    #dem1.test_send_feedcard()
+    #dem1.test_send_feedcard_old_api()
 
